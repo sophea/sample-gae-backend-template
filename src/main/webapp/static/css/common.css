@@ -1,0 +1,158 @@
+.homeContainer{
+/*margin-top: 200px;*/
+}
+
+div .link_title{
+	background-color: grey;
+    color: white;
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.flag {
+    width: 35px;
+    height: 25px;
+}
+
+.name {
+	float: left;
+    width: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.up-icon{
+    width: 16px;
+    height: 16px;
+    padding-left: 7px;
+    padding-right: 7px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image:url("/img/arrow_up.png");
+}
+
+.down-icon{
+    width: 16px;
+    height: 16px;
+    padding-left: 7px;
+    padding-right: 7px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image:url("/img/arrow_down.png");
+}
+
+.delete-icon{
+    width: 16px;
+    height: 16px;
+    padding-left: 7px;
+    padding-right: 7px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image:url("/img/icon_delete.png");
+}
+
+.dropZone{
+	-webkit-border-radius: 10px; 
+	border: 3px dashed #eee; 
+	color: #ccc; 
+	font-size: 18pt; 
+	font-weight: bold; 
+	height: 124px; 
+	padding: 25px; 
+	text-align: center; 
+	width: 286px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.dropZoneImage{
+    background-image:url("/img/folder_black.png");
+    background-repeat: no-repeat;
+    background-size: 54px;
+    background-position: center;
+}
+
+.logo_img{
+	width: 100px;
+	height: 100px;
+}
+
+.error {
+	background-color: red;
+	color: #fff;
+	padding: 3px 8px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 11px;
+	line-height: 13px;
+}
+
+.error p {
+	display: inline;
+}
+a:hover {
+	cursor: pointer;
+}
+
+#startDatePicker, #endDatePicker {
+	cursor: pointer;
+}
+
+#startDatePicker[disabled], #endDatePicker[disabled] {
+    cursor: default;
+}
+.gllpLatlonPicker{
+	margin: 20px 0;
+}
+
+.gllpMap{
+width: 500px;
+height: 250px;
+}
+
+.gllpMap img{
+max-width: inherit;
+}
+
+.opaque{
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.loading{
+	background-image: url("/img/loading.gif");
+	height: 125px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.atoz-disabled{
+	color: gray;
+    cursor: default;
+    text-decoration: none;
+}
+
+#offerPanelCenter .table{
+    margin-bottom: 0px;
+}
+.modal.fade.in{
+top:30%
+}
+
+select[disabled] option{
+	color: silver; /* Windows 8 */
+}
+
+.navbar .nav li a{
+    padding: 8px;
+}
+
+.coverpage_label{
+	float: left; 
+	width: 45px; 
+	margin-top: 5px;
+}
+.coverpage_title{
+	margin-bottom: 10px;
+}

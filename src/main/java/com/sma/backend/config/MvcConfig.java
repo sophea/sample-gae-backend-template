@@ -12,10 +12,12 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceView;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.sma.backend.service.CategoryService;
 import com.sma.backend.service.CategoryServiceImpl;
-import com.sma.backend.service.TutorialService;
+import com.sma.backend.service.backendService;
 import com.sma.backend.web.CategoryController;
 import com.wadpam.oauth2.service.OAuth2OpenUserService;
 import com.wadpam.open.config.DomainConfig;
@@ -45,9 +47,9 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     }
     
     @Bean(initMethod = "init")
-    public TutorialService tutorialService() {
+    public backendService tutorialService() {
         // domainService and factoryService will be auto-wired
-        return new TutorialService();
+        return new backendService();
     }
     
     @Bean
@@ -59,6 +61,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     @Bean
     public CategoryController categoryController() {
         CategoryController controller = new CategoryController();
+        controller.setService(categoryService());
         return controller;
     }
     // -------------- Message Converters ----------------------
@@ -82,6 +85,22 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
                 .addResourceLocations("/static/")
                 .addResourceLocations("classpath:/static/");
     }
+    @Bean
+    public InternalResourceViewResolver htmlViewResolver() {
+        final InternalResourceViewResolver bean = new InternalResourceViewResolver();
+        bean.setViewClass(InternalResourceView.class);
+        bean.setOrder(999);
+        bean.setPrefix("/WEB-INF/jsp/");
+        bean.setSuffix(".jsp");
+        return bean;
+    }
+    
+   /* <!--Basic application beans. -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>*/
     
     // -------------- Controllers ----------------------
     

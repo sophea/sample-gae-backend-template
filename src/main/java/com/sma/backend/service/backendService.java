@@ -19,10 +19,10 @@ import com.wadpam.open.service.DomainService;
 
 /**
  *
- * @author sosandstrom
+ * @author sophea
  */
-public class TutorialService {
-    public static final String TUTORIAL = "tutorial";
+public class backendService {
+    public static final String SAMPLE = "sample";
 
     @Autowired
     private DomainService domainService;
@@ -35,12 +35,12 @@ public class TutorialService {
         // create a tutorial app domain:
         NamespaceManager.set(null);
         DAppDomain tutorial = new DAppDomain();
-        tutorial.setId(TUTORIAL);
-        tutorial.setUsername(TUTORIAL);
-        tutorial.setPassword(TUTORIAL);
+        tutorial.setId(SAMPLE);
+        tutorial.setUsername(SAMPLE);
+        tutorial.setPassword(SAMPLE);
         domainService.create(tutorial);
         
-        NamespaceManager.set(TUTORIAL);
+        NamespaceManager.set(SAMPLE);
         DFactory facebook = new DFactory();
         facebook.setId(OAuth2Service.PROVIDER_ID_FACEBOOK);
         facebook.setClientId("255653361131262");
